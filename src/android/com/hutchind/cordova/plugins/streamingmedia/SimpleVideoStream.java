@@ -139,7 +139,10 @@ MediaPlayer.OnErrorListener, MediaPlayer.OnBufferingUpdateListener {
 		Log.d(TAG, "onDestroy triggered.");
 		stop();
 	}
-
+@Override
+public void onUserLeaveHint () {
+    enterPictureInPictureMode();
+}
 	private void wrapItUp(int resultCode, String message) {
 		Log.d(TAG, "wrapItUp was triggered.");
 		Intent intent = new Intent();
